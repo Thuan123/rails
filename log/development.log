@@ -12,3 +12,407 @@ Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0
 Processing by ApplicationController#hello as HTML
   Rendered text template (0.1ms)
 Completed 200 OK in 36ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (11.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (8.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150926063008)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150926063008"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 06:32:03 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+AbstractController::ActionNotFound (The action 'index
+  ' could not be found for UsersController):
+  actionpack (4.2.1) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:29:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 06:33:29 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 21ms (ActiveRecord: 0.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:67:in `set_user'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.1ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 06:34:18 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 973ms (Views: 961.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.self-ade00adcde1249df4241695c2aae67a1990b158fa2c1ae5aedad5425292b1a62.css?body=1" for 113.22.0.178 at 2015-09-26 06:34:19 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 113.22.0.178 at 2015-09-26 06:34:20 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 113.22.0.178 at 2015-09-26 06:34:21 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 113.22.0.178 at 2015-09-26 06:34:21 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 113.22.0.178 at 2015-09-26 06:34:21 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 113.22.0.178 at 2015-09-26 06:34:21 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 113.22.0.178 at 2015-09-26 06:34:21 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 113.22.0.178 at 2015-09-26 06:34:21 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/new" for 113.22.0.178 at 2015-09-26 06:34:26 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (28.5ms)
+  Rendered users/new.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 93ms (Views: 83.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 113.22.0.178 at 2015-09-26 06:34:40 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oEz8C54itruO2OcSZcotiMFsv6abNltkP/CBMD1gMVy91pqP2rXcesFwXJcC3KfstMiNaOFxUZMe/q8LM0Vp/Q==", "user"=>{"name"=>"thuan", "email"=>"thuanbk56@gmail.com"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "thuan"], ["email", "thuanbk56@gmail.com"], ["created_at", "2015-09-26 06:34:40.107121"], ["updated_at", "2015-09-26 06:34:40.107121"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://rails-thuan123-1.c9.io/users/1
+Completed 302 Found in 20ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/users/1" for 113.22.0.178 at 2015-09-26 06:34:40 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 55ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 113.22.0.178 at 2015-09-26 06:37:36 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 97ms (Views: 94.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 113.22.0.178 at 2015-09-26 06:37:38 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 77ms (Views: 74.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 06:37:44 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 113.22.0.178 at 2015-09-26 07:08:51 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/_form.html.erb (2.7ms)
+  Rendered users/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for 113.22.0.178 at 2015-09-26 08:06:39 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mYAVJRqAhUHJdETh08aE3vV2DjyST7lQTyOjJVmYkIWEGnOhXhfvgIbc/2S00A66gNI88ugIs6duLY0eV73IJA==", "user"=>{"name"=>"thuan", "email"=>"thuanbk56@gmail.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://rails-thuan123-1.c9.io/users/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 113.22.0.178 at 2015-09-26 08:06:39 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 08:10:17 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 113.22.0.178 at 2015-09-26 08:10:28 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20150926081905)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150926081905"]]
+  [1m[36m (28.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 08:21:57 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MicropostsController#index as HTML
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT "microposts".* FROM "microposts"
+  Rendered microposts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 336ms (Views: 322.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/microposts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 113.22.0.178 at 2015-09-26 08:21:57 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/microposts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 113.22.0.178 at 2015-09-26 08:21:57 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/microposts/new" for 113.22.0.178 at 2015-09-26 08:22:01 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (28.0ms)
+  Rendered microposts/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 123ms (Views: 115.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/microposts" for 113.22.0.178 at 2015-09-26 08:22:06 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d9xz+hBRKJQxikRHiCrUiuQuZqC8dbPaK8jcHYP1E/VqRhV+VMZCVX4i/8LvPF7ukYpUbsYyuS0KxvImjdBLVA==", "micropost"=>{"content"=>"saasa", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "saasa"], ["user_id", 1], ["created_at", "2015-09-26 08:22:06.753082"], ["updated_at", "2015-09-26 08:22:06.753082"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://rails-thuan123-1.c9.io/microposts/1
+Completed 302 Found in 20ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/microposts/1" for 113.22.0.178 at 2015-09-26 08:22:06 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMicropost Load (0.3ms)[0m  SELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered microposts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 78ms (Views: 65.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 08:33:15 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MicropostsController#index as HTML
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT "microposts".* FROM "microposts"
+  Rendered microposts/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 224ms (Views: 209.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/microposts/new" for 113.22.0.178 at 2015-09-26 08:33:18 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (26.4ms)
+  Rendered microposts/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 109ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 113.22.0.178 at 2015-09-26 08:33:23 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TewM/iIakS9XDr/Xs0J0toww3Qurimoh+cB3+vS7NglQdmp6Zo377himBFLUVP7S+ZTvxdHNYNbYzlnB+p5uqA==", "micropost"=>{"content"=>"wertyhjkcasdfghaa", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "wertyhjkcasdfghaa"], ["created_at", "2015-09-26 08:33:23.524098"], ["updated_at", "2015-09-26 08:33:23.524098"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://rails-thuan123-1.c9.io/microposts/2
+Completed 302 Found in 18ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/microposts/2" for 113.22.0.178 at 2015-09-26 08:33:23 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered microposts/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 85ms (Views: 69.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 08:52:44 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MicropostsController#index as HTML
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT "microposts".* FROM "microposts"
+  Rendered microposts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 238ms (Views: 218.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/microposts/new" for 113.22.0.178 at 2015-09-26 08:52:52 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (19.9ms)
+  Rendered microposts/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 100ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 113.22.0.178 at 2015-09-26 08:52:54 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LgidJb291d50C2awH+/401xdwzlEi6c/Kp4n36jErkEzkvuh+Sq/Hzuj3TV4+XK3Kfnx9z7MrcgLkAnkpuH24A==", "micropost"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (3.8ms)
+  Rendered microposts/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 59ms (Views: 54.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/microposts" for 113.22.0.178 at 2015-09-26 08:53:03 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YNoCVeDkfs3NBwh5l1NQDjyij/hVcvm2B25MZg8+j+J9QGTRpHMUDIKvs/zwRdpqSQa9Ni8180EmYGJdARvXQw==", "micropost"=>{"content"=>"Thuan123", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Thuan123"], ["user_id", 1], ["created_at", "2015-09-26 08:53:03.967570"], ["updated_at", "2015-09-26 08:53:03.967570"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://rails-thuan123-1.c9.io/microposts/3
+Completed 302 Found in 18ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/microposts/3" for 113.22.0.178 at 2015-09-26 08:53:04 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMicropost Load (0.3ms)[0m  SELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered microposts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 87ms (Views: 76.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts" for 113.22.0.178 at 2015-09-26 08:53:06 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  [1m[36mMicropost Load (0.3ms)[0m  [1mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts/new" for 113.22.0.178 at 2015-09-26 08:53:10 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (2.9ms)
+  Rendered microposts/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 113.22.0.178 at 2015-09-26 09:03:59 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MicropostsController#index as HTML
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT "microposts".* FROM "microposts"
+  Rendered microposts/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 201ms (Views: 186.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/microposts/1" for 113.22.0.178 at 2015-09-26 09:04:05 +0000
+Cannot render console from 113.22.0.178! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.3ms)[0m  [1mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered microposts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 66ms (Views: 53.0ms | ActiveRecord: 0.3ms)
